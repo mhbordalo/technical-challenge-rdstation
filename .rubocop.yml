@@ -4,6 +4,19 @@ require:
   - rubocop-factory_bot
   - rubocop-rspec_rails
 
+AllCops:
+  Exclude:
+    - 'spec/requests/swagger_doc_spec.rb'
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
 Metrics/BlockLength:
   Enabled: false
 

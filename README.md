@@ -27,7 +27,6 @@ Se não existir um carrinho para a sessão, criar o carrinho e salvar o ID do ca
 
 Adicionar o produto no carrinho e devolver o payload com a lista de produtos do carrinho atual.
 
-
 ROTA: `/cart`
 Payload:
 ```js
@@ -132,7 +131,6 @@ Criar um endpoint para excluir um produto do do carrinho.
 
 ROTA: `/cart/:product_id`
 
-
 #### Detalhes adicionais:
 
 - Verifique se o produto existe no carrinho antes de tentar removê-lo.
@@ -164,12 +162,10 @@ Existem testes pendentes, eles estão marcados como <span style="color:green;">P
 Alguns testes já estão passando e outros estão com erro. Com a sua implementação os testes com erro devem passar a funcionar. 
 A adição de novos testes é sempre bem-vinda, mas sem alterar os já implementados.
 
-
 ### O que esperamos
 - Implementação dos testes faltantes e de novos testes para os métodos/serviços/entidades criados
 - Construção das 4 rotas solicitadas
 - Implementação de um job para controle dos carrinhos abandonados
-
 
 ### Itens adicionais / Legais de ter
 - Utilização de factory na construção dos testes

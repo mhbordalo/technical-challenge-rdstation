@@ -8,6 +8,9 @@
   - active_storage_analysis
   - active_storage_purge
 
+:redis:
+  :url: redis://localhost:6379/0
+
 :scheduler:
   :schedule:
     mark_cart_as_abandoned_job:
