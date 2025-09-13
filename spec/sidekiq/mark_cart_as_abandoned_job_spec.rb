@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
+
 RSpec.describe MarkCartAsAbandonedJob, type: :job do
   describe '#perform' do
     let(:abandoned_carts) { create_list(:cart, 2, last_interaction_at: 4.hours.ago) }

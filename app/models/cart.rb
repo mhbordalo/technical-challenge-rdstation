@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 class Cart < ApplicationRecord
   has_many :cart_items, dependent: :destroy
-  has_many :products, :through => :cart_items
+  has_many :products, through: :cart_items
 
   enum status: { active: 1, abandoned: 0 }
 
-  validates_numericality_of :total_price, greater_than_or_equal_to: 0
+  validates :total_price, numericality: { greater_than_or_equal_to: 0 }
 
   def self.period_of_cart_abandoned
     3.hours.ago
   end
 
-    def self.period_of_carts_to_remove
+  def self.period_of_carts_to_remove
     7.days.ago
   end
 
@@ -29,7 +31,7 @@ class Cart < ApplicationRecord
       self.total_price = self.total_price.clamp(0, Float::INFINITY)
     end
   end
-  
+
   def mark_as_abandoned
     abandoned!
   end

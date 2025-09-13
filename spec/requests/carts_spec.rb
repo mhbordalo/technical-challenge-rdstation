@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CartsController, type: :controller do
@@ -224,7 +226,7 @@ RSpec.describe CartsController, type: :controller do
     end
   end
 
-  describe "POST /add_items" do
+  describe 'POST /add_items' do
     let(:cart) { create(:cart, total_price: 10.0) }
     let(:product) { create(:product, name: 'Test Product', price: 10.0) }
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartsController < ApplicationController
   before_action :find_or_create_cart, only: %i[create]
   before_action :set_cart, only: %i[show add_item remove_product]

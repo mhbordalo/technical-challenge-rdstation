@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
     delete '/:product_id', to: 'carts#remove_product'
   end
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  get 'up' => 'rails/health#show', as: :rails_health_check
 
-  root "rails/health#show"
+  root 'rails/health#show'
 end
