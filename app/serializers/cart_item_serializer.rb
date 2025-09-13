@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CartItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :quantity, :unit_price, :total_price
+  attributes :id, :name, :quantity, :price, :total_price
   belongs_to :cart
   belongs_to :product
 
@@ -9,7 +9,7 @@ class CartItemSerializer < ActiveModel::Serializer
     object.product.name
   end
 
-  def unit_price
+  def price
     object.product.price
   end
 

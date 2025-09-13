@@ -45,14 +45,14 @@ Response
       "id": 645,
       "name": "Nome do produto",
       "quantity": 2,
-      "unit_price": 1.99, // valor unitário do produto
+      "price": 1.99, // valor unitário do produto
       "total_price": 3.98, // valor total do produto
     },
     {
       "id": 646,
       "name": "Nome do produto 2",
       "quantity": 2,
-      "unit_price": 1.99,
+      "price": 1.99,
       "total_price": 3.98,
     },
   ],
@@ -74,14 +74,14 @@ Response:
       "id": 645,
       "name": "Nome do produto",
       "quantity": 2,
-      "unit_price": 1.99, // valor unitário do produto
+      "price": 1.99, // valor unitário do produto
       "total_price": 3.98, // valor total do produto
     },
     {
       "id": 646,
       "name": "Nome do produto 2",
       "quantity": 2,
-      "unit_price": 1.99,
+      "price": 1.99,
       "total_price": 3.98,
     },
   ],
@@ -110,14 +110,14 @@ Response:
       "id": 1230,
       "name": "Nome do produto X",
       "quantity": 2, // considerando que esse produto já estava no carrinho
-      "unit_price": 7.00, 
+      "price": 7.00, 
       "total_price": 14.00, 
     },
     {
       "id": 01020,
       "name": "Nome do produto Y",
       "quantity": 1,
-      "unit_price": 9.90, 
+      "price": 9.90, 
       "total_price": 9.90, 
     },
   ],
