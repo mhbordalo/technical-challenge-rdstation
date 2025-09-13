@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "/products", type: :request do
   let(:valid_attributes) {
     {
-      name: 'A product',
-      price: 1
+      name: 'Test product',
+      price: 10.0
     }
   }
 
@@ -20,7 +20,8 @@ RSpec.describe "/products", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Product.create! valid_attributes
+      create(:product)
+
       get products_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
@@ -28,7 +29,7 @@ RSpec.describe "/products", type: :request do
 
   describe "GET /show" do
     it "renders a successful response" do
-      product = Product.create! valid_attributes
+      product = create(:product)
       get product_url(product), as: :json
       expect(response).to be_successful
     end
@@ -53,10 +54,10 @@ RSpec.describe "/products", type: :request do
 
     context "with invalid parameters" do
       it "does not create a new Product" do
-        expect {
+        expect do
           post products_url,
                params: { product: invalid_attributes }, as: :json
-        }.to change(Product, :count).by(0)
+        end.not_to change(Product, :count)
       end
 
       it "renders a JSON response with errors for the new product" do
@@ -80,7 +81,7 @@ RSpec.describe "/products", type: :request do
       }
 
       it "updates the requested product" do
-        product = Product.create! valid_attributes
+        product = create(:product)
         patch product_url(product),
               params: { product: new_attributes }, headers: valid_headers, as: :json
         product.reload
@@ -89,7 +90,7 @@ RSpec.describe "/products", type: :request do
       end
 
       it "renders a JSON response with the product" do
-        product = Product.create! valid_attributes
+        product = create(:product)
         patch product_url(product),
               params: { product: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
@@ -99,7 +100,7 @@ RSpec.describe "/products", type: :request do
 
     context "with invalid parameters" do
       it "renders a JSON response with errors for the product" do
-        product = Product.create! valid_attributes
+        product = create(:product)
         patch product_url(product),
               params: { product: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
@@ -110,10 +111,10 @@ RSpec.describe "/products", type: :request do
 
   describe "DELETE /destroy" do
     it "destroys the requested product" do
-      product = Product.create! valid_attributes
-      expect {
+      product = create(:product)
+      expect do
         delete product_url(product), headers: valid_headers, as: :json
-      }.to change(Product, :count).by(-1)
+      end.to change(Product, :count).by(-1)
     end
   end
 end
