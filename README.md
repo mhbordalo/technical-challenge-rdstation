@@ -191,6 +191,23 @@ A aplicação já possui um Dockerfile, que define como a aplicação deve ser c
 
 ### Como executar o projeto
 
+## Executando a app com docker
+
+Para subir a aplicação:
+```bash
+make web
+```
+
+Para rodar os testes:
+```bash
+make tests
+```
+
+Para rodar qualidade de código:
+```bash
+make quality
+```
+
 ## Executando a app sem o docker
 Dado que todas as as ferramentas estão instaladas e configuradas:
 
