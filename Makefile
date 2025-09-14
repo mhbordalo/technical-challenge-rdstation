@@ -1,5 +1,5 @@
 web:
-	@docker-compose up web
+	@docker-compose up
 
 tests:
 	@docker-compose up test
