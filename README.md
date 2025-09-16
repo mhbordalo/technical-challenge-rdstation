@@ -204,6 +204,11 @@ Para rodar qualidade de código:
 make quality
 ```
 
+Para popular banco de dados:
+```bash
+rails db:seed
+```
+
 ## Executando a app sem o docker
 Dado que todas as as ferramentas estão instaladas e configuradas:
 
@@ -225,6 +230,7 @@ bundle exec rails server
 Executar os testes:
 ```bash
 bundle exec rspec
+bundle exec rubocop
 ```
 
 ### Como enviar seu projeto

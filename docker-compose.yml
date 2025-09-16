@@ -19,7 +19,7 @@ services:
         restart: unless-stopped
     web:
         build: .
-        command: bash -c "bundle exec rails db:reset db:migrate db:seed && bundle exec foreman start"
+        command: bash -c "bundle exec rails db:prepare && bundle exec rails s -b 0.0.0.0 -p 3000"
         volumes:
             - .:/rails
         depends_on:
